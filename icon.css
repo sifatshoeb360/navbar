@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+header{
+    background: rgb(209, 16, 209);
+    padding: 1rem 0;
+    position: relative;
+}
+header nav{
+    max-width: 1024px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+header nav .logo h2{
+    color: #fff;
+}
+header nav .menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+header .menu li a{
+    display: block;
+    margin: 0 8px;
+    padding: 5px 4px;
+    color: #fff;
+}
+header nav #nav-check{
+    position: absolute;
+    pointer-events: none;
+    visibility: hidden;
+}
+header nav .nav-toggler{
+   
+}
+/* fon awesome icon */
+/* fon awesome icon */
+/* fon awesome icon */
+#bottom_h nav .nav-toggler i{
+        text-align: center;
+        font-size: 28px;
+        background: #fff;
+        height: 35px;
+        width: 35px;
+        border-radius: 4px;
+        padding: 4px;
+        color: rgb(209, 16, 209);
+        display: none;
+}
+#bottom_h nav .nav-toggler .close{
+    display: none;
+}
+
+
+@media(max-width:768px){
+    #bottom_h nav .nav-toggler i{
+        display: block;
+    }
+    header nav .menu{
+        background: rgb(209, 16, 209);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid rgb(255, 184, 255);
+        transform: scaleY(0);
+        transform-origin: top center;
+        flex-flow: column;
+        align-items: flex-start;
+    }
+    header nav #nav-check:checked ~ .menu{
+        transform: scaleY(1);
+        transition: 0.3s;
+    }
+    header nav #nav-check:focus ~ .nav-toggler{
+        box-shadow: 2px 2px 5px 5px rgb(0, 0, 0);
+    }
+    /* fon awesome icon */
+    /* fon awesome icon */
+    /* fon awesome icon */
+    #bottom_h nav #nav-check:checked ~ .nav-toggler .open{
+        display: none;
+    }
+    #bottom_h nav #nav-check:checked ~ .nav-toggler .close{
+        display: block;
+    }
+}

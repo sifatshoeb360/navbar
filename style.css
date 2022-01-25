@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+header{
+    background: rgb(209, 16, 209);
+    padding: 1rem 0;
+    position: relative;
+}
+header nav{
+    max-width: 1024px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+header nav .logo h2{
+    color: #fff;
+}
+header nav .menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+header .menu li a{
+    display: block;
+    margin: 0 8px;
+    padding: 5px 4px;
+    color: #fff;
+}
+header nav #nav-check{
+    position: absolute;
+    pointer-events: none;
+    visibility: hidden;
+}
+header nav .nav-toggler{
+    height: 30px;
+    width: 36px;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav .nav-toggler span{
+    display: block;
+    height: 2px;
+    width: 20px;
+    background: rgb(209, 16, 209);
+    position: relative;
+}
+header nav .nav-toggler span::after,
+header nav .nav-toggler span::before{
+    content: " ";
+    height: 100%;
+    width: 100%;
+    background: rgb(209, 16, 209);
+    position: absolute;
+    left: 0;
+}
+header nav .nav-toggler span::after{
+    top: 6px;
+}
+header nav .nav-toggler span::before{
+    top: -6px;
+}
+
+@media(max-width:768px){
+    header nav .nav-toggler{
+        display: flex;
+    }
+    header nav .menu{
+        background: rgb(209, 16, 209);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid rgb(255, 184, 255);
+        transform: scaleY(0);
+        transform-origin: top center;
+        flex-flow: column;
+        align-items: flex-start;
+    }
+    #header_top nav #nav-check:checked ~ .menu{
+        transform: scaleY(1);
+        transition: 0.3s;
+    }
+    /* palin css icon */
+    /* palin css icon */
+    /* palin css icon */
+    #header_top nav #nav-check:checked ~ .nav-toggler span{
+        background: transparent;
+    }
+    #header_top nav #nav-check:checked ~ .nav-toggler span::after{
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    #header_top nav #nav-check:checked ~ .nav-toggler span::before{
+        top: 0;
+        transform: rotate(45deg);
+    }
+}
